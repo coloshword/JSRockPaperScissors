@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    height: 100vh;
+    background-color: rgb(39, 41, 68); 
+    font-family: sans-serif;
+    color:black;
+}
+
+.score {
+    color: rgb(245, 245, 245); /* We are changing the color of the text on the score section*/
+    height: 20vh; /* Setting the height of this div to be 20 % of the total height of the screen*/
+    display: flex; /*turn into a flexbox*/
+    justify-content: space-around;
+    align-items: center; /* a property that turns the items in the flex box to be aligned in the center of the box*/
+}
+
+.score h2{ /* We are only editing the h2 elements inside of the div with the score class*/
+    font-size: 40px;
+}
+
+.score p {
+    text-align: center; /* aligns text in the center of its container, which is the div with player or computer*/
+    padding: 10px; /* makes it not so close to the text above*/
+}
+
+.intro {
+    color: rgb(245, 245, 245);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.intro h1 {
+    font-size: 50px;
+}
+
+.intro button {
+    width: 150px;
+    height: 50px;
+    background: none; /* the button removes background, removes the border as well and then change color */
+    border: none;
+    color: rgb(245, 245, 245);
+    font-size: 20px;
+    background: rgb(45, 117, 96);
+    border-radius: 3px; /* allows the button to be rounded by a circles of certain radius*/
+    cursor: pointer;
+}
+
+.match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.winner {
+    color: rgb(245, 245, 245);
+    text-align: center; /* center of container */
+    font-size: 50px;
+}
+
+.hands, .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player-hand {
+    transform: rotateY(180deg); /* rotates through y axis of the player hand image so that it looks better */
+}
+
+/* fade out class, which we can assign using JS later*/
+.fadeOut {
+    opacity: 0; /* Makes it so that you can't see these elements, and that you can't click them */
+    pointer-events: none;
+}
+
+.fadeIn { /* the opposite, you take what was originally not seen and add it in */
+    opacity: 1;
+    pointer-events: all;
+}
