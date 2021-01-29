@@ -41,7 +41,7 @@ section {
     font-size: 50px;
 }
 
-.intro button {
+.intro button , .options button{
     width: 150px;
     height: 50px;
     background: none; /* the button removes background, removes the border as well and then change color */

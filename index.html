@@ -1,47 +1,48 @@
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Rock Paper Scissors</title>
-</head>
-<body> 
-    <section class="game">
-        <!--we have a div for score-->
-        <div class="score">
-            <div class="player-score">
-                <h2>Player</h2>
-                <p>0</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body> 
+        <section class="game">
+            <!--we have a div for score-->
+            <div class="score">
+                <div class="player-score">
+                    <h2>Player</h2>
+                    <p>0</p>
+                </div>
+                <div class="computer-score">
+                    <h2>Computer</h2>
+                    <p>0</p>
+                </div>
             </div>
-            <div class="computer-score">
-                <h2>Computer</h2>
-                <p>0</p>
+            <!-- and we have a div for starting the game-->
+            <div class="intro">
+                <h1> Rock Paper and Scissors</h1>
+                <button>Play</button>
             </div>
-        </div>
-        <!-- and we have a div for starting the game-->
-        <div class="intro">
-            <h1> Rock Paper and Scissors</h1>
-            <button>Play</button>
-        </div>
-        <!-- and here is the div for the match-->
-        <div class="match fadeOut">
-            <!-- a winner class for displaying the winner-->
-            <h2 class="winner">Choose an option</h2>
-            <!-- And here is the div for displaying both hand, default for both is rocks-->
-            <div class="hands">
-                <img class="player-hand"src="assets/rock.png">
-                <img class="computer-hand"src="assets/rock.png">
+            <!-- and here is the div for the match-->
+            <div class="match fadeOut">
+                <!-- a winner class for displaying the winner-->
+                <h2 class="winner">Choose an option</h2>
+                <!-- And here is the div for displaying both hand, default for both is rocks-->
+                <div class="hands">
+                    <img class="player-hand"src="assets/rock.png">
+                    <img class="computer-hand"src="assets/rock.png">
+                </div>
+                <!-- now you need an options tab, the place where you can choose what to play-->
+                <!-- three buttons-->
+                <div class="options">
+                    <button class="rock">rock</button>
+                    <button class="paper">paper</button>
+                    <button class="scissors">scissors</button>
+                </div>
             </div>
-            <!-- now you need an options tab, the place where you can choose what to play-->
-            <!-- three buttons-->
-            <div class="options">
-                <button class="btn btn-primary" class="rock">rock</button>
-                <button class="btn btn-primary" class="paper">paper</button>
-                <button class="btn btn-primary" class="scissors">scissors</button>
-            </div>
-        </div>
-    </section>
-    <script src="script.js"></script>
-</body>
-</html> 
+        </section>
+        <script src="script.js"></script>
+    </body>
+    </html> 

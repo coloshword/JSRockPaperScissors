@@ -2,12 +2,11 @@ game();
 
 function game() {
     //main game loop
-    let pScore = 0;
-    let cScore = 0;
+    var pScore = 0;
+    var cScore = 0;
     var playBtn = document.querySelector(".intro button");
     playBtn.addEventListener("click", startGame);
     // Now you can click 
-    var choices = ["rock", "paper", "scissors"];
     chooseOption();
 }
 
@@ -30,24 +29,56 @@ function chooseOption() {
 
 function optionChosen() {
     let pChoice = this.textContent;
+    // We are going to update the player image here
+    let playerImage = document.querySelector(".player-hand");
+    playerImage.src = "assets/" + pChoice + ".png";
     switch(pChoice) {
         case "rock" :
-            pChoice = 1;
+            pChoice = 0;
             break;
         case "paper":
-            pChoice = 2;
+            pChoice = 1;
             break;
         case "scissors":
-            pChoice = 3;
+            pChoice = 2;
     }
     let cChoice = getComputerChoice();
-    compareChoices(pChoice, cChoice);
+    let winner = compareChoices(pChoice, cChoice);
 }
 
+function compareChoices(playerChoice, ComputerChoice) {
+    // row is computer, column is player
+    var choices = ["rock", "paper", "scissors"];
+    let results = [
+        ["tie", "player", "computer"],
+        ["computer", "tie", "player"],
+        ["player", "computer", "tie"]
+    ]
+    let winner = results[ComputerChoice][playerChoice];
+    let computerString = choices[ComputerChoice];
+    // update computer image here
+    let computerImage = document.querySelector(".computer-hand");
+    computerImage.src = "assets/" + computerString + ".png";
+    displayWinner(winner, computerString);
+}
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     return choice;
 }
 
- 
+function displayWinner(winner, computerString) {
+    // get the 
+    let ans = "";
+    if(winner == "tie") {
+        ans = "Tie";
+    }
+    else if(winner == "computer") {
+        ans = "Computer Wins";
+    }
+    else if (winner == "player") {
+        ans = "Player Wins";
+    }
+    let displayWinner = document.querySelector(".winner");
+    displayWinner.textContent = ans;
+}
