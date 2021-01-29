@@ -1,9 +1,9 @@
+var pScore = 0;
+var cScore = 0; 
 game();
 
 function game() {
     //main game loop
-    var pScore = 0;
-    var cScore = 0;
     var playBtn = document.querySelector(".intro button");
     playBtn.addEventListener("click", startGame);
     // Now you can click 
@@ -75,10 +75,20 @@ function displayWinner(winner, computerString) {
     }
     else if(winner == "computer") {
         ans = "Computer Wins";
+        cScore++;
     }
     else if (winner == "player") {
         ans = "Player Wins";
+        pScore++;
     }
     let displayWinner = document.querySelector(".winner");
     displayWinner.textContent = ans;
+    updateScore();
+}
+
+function updateScore() {
+    var scorePlayer= document.querySelector(".player-score p");
+    var scoreComputer = document.querySelector(".computer-score p");
+    scoreComputer.textContent = cScore;
+    scorePlayer.textContent = pScore;
 }
