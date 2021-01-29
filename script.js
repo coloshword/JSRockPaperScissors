@@ -1,6 +1,5 @@
 var pScore = 0;
 var cScore = 0; 
-game();
 
 function game() {
     //main game loop
@@ -92,3 +91,5 @@ function updateScore() {
     scoreComputer.textContent = cScore;
     scorePlayer.textContent = pScore;
 }
+
+game();
